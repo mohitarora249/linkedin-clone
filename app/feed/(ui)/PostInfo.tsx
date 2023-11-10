@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { Card, Button, Flex, Avatar, Typography } from 'antd';
+import { Card, Button, Flex, Avatar, Typography, notification } from 'antd';
 import { CommentOutlined, LikeOutlined, ShareAltOutlined, UserOutlined, CloseOutlined, EllipsisOutlined } from "@ant-design/icons";
 const { Text } = Typography;
 
@@ -37,12 +37,23 @@ const UserInfo = () => {
 }
 
 const ActionButtons = () => {
+    const [api, contextHolder] = notification.useNotification();
+
+    const openNotificationWithIcon = () => {
+        api.success({
+          message: 'Copied!',
+          description: 'Post link copied to your clipbaord',
+          placement: "bottomRight"
+        });
+      };
+
     return (
         <Flex gap="small" wrap="wrap" className="mt-2" justify="space-around">
+            {contextHolder}
             <Button type="text" size="large" icon={<LikeOutlined />}>Like</Button>
             <Button type="text" size="large" icon={<CommentOutlined />}>Comment</Button>
             <Button type="text" size="large" icon={<ShareAltOutlined />}>Repost</Button>
-            <Button type="text" size="large" icon={<ShareAltOutlined />}>Share</Button>
+            <Button onClick={openNotificationWithIcon} type="text" size="large" icon={<ShareAltOutlined />}>Share</Button>
         </Flex>
     )
 }
