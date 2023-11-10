@@ -3,6 +3,7 @@ import AccountInfo from "./(ui)/AccountInfo";
 import CreatePostCard from "./(ui)/CreatePostCard";
 import News from "./(ui)/News";
 import PostInfo from "./(ui)/PostInfo";
+import { Flex } from "antd";
 
 const FeedPage = () => {
   return (
@@ -10,11 +11,13 @@ const FeedPage = () => {
       <AccountInfo />
       <div className="col-span-2">
         <CreatePostCard />
-        <PostInfo />
-        <PostInfo />
-        <PostInfo />
-        <PostInfo />
-        <PostInfo />
+        <Flex gap={12} vertical>
+          <PostInfo />
+          <PostInfo />
+          <PostInfo />
+          <PostInfo />
+          <PostInfo />
+        </Flex>
       </div>
       <div>
         <News />

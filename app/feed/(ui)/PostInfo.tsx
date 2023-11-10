@@ -1,15 +1,23 @@
+"use client";
 import React from "react";
-import { Card, Button, Flex, Avatar } from 'antd';
-import { CommentOutlined, LikeOutlined, ShareAltOutlined, UserOutlined } from "@ant-design/icons";
+import { Card, Button, Flex, Avatar, Typography } from 'antd';
+import { CommentOutlined, LikeOutlined, ShareAltOutlined, UserOutlined, CloseOutlined, EllipsisOutlined } from "@ant-design/icons";
+const { Text } = Typography;
 
 const PostInfo = () => {
     return (
-        <Card className="" title={<UserInfo />} actions={[<ActionButtons />]} cover={
-            <img
-                alt="example"
-                src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
-            />
-        }>
+        <Card
+            className=""
+            title={<UserInfo />}
+            actions={[<ActionButtons />]}
+            cover={
+                <img
+                    alt="example"
+                    src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
+                />
+            }
+            extra={<><Button shape="circle" type="text" icon={<EllipsisOutlined />} /><Button shape="circle" type="text" icon={<CloseOutlined />} /></>}
+        >
 
         </Card>
     )
@@ -17,8 +25,13 @@ const PostInfo = () => {
 
 const UserInfo = () => {
     return (
-        <Flex gap="small">
+        <Flex align="center" gap={8}>
             <Avatar shape="circle" size={36} icon={<UserOutlined />} />
+            <Flex vertical gap={0}>
+                <Text>Mohit Arora</Text>
+                <Text type="secondary">Web Developer</Text>
+                <Text type="secondary">1h</Text>
+            </Flex>
         </Flex>
     )
 }
