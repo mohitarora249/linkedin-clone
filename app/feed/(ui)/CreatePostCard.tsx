@@ -1,7 +1,7 @@
 import React from "react";
 
 const CreatePostCard = () => {
-    return <div>CreatePostCard</div>
+    return <div className="card">CreatePostCard</div>
 }
 
 export default CreatePostCard;
