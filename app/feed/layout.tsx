@@ -1,9 +1,13 @@
+"use client"
 import React from "react";
-import type { Metadata } from 'next'
+// import type { Metadata } from 'next'
+import { Layout } from "antd";
+import Navbar from "../(ui)/Navbar";
+const { Content } = Layout;
 
-export const metadata: Metadata = {
-  title: 'Feed | LinkedIn Clone'
-}
+// export const metadata: Metadata = {
+//   title: 'Feed | LinkedIn Clone'
+// }
 
 export default function RootLayout({
   children,
@@ -11,8 +15,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <div className="max-w-6xl mx-auto">
-      {children}
-    </div>
+    <Layout className="max-w-6xl mx-auto">
+      <Navbar />
+      <Content className="m-5">{children}</Content>
+    </Layout>
+    
   )
 }
