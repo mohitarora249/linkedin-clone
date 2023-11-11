@@ -1,7 +1,8 @@
+import { Card } from "antd";
 import React from "react";
 
 const News = () => {
-    return <div className="card">News</div>
+    return <Card className="">News</Card>
 }
 
 export default News;

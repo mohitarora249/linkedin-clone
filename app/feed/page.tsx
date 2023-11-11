@@ -8,20 +8,22 @@ import { Flex } from "antd";
 const FeedPage = () => {
   return (
     <main className="grid grid-cols-4 gap-4">
-      <AccountInfo />
-      <div className="col-span-2">
-        <CreatePostCard />
+      <section>
+        <AccountInfo />
+      </section>
+      <section className="col-span-2">
         <Flex gap={12} vertical>
+          <CreatePostCard />
           <PostInfo />
           <PostInfo />
           <PostInfo />
           <PostInfo />
           <PostInfo />
         </Flex>
-      </div>
-      <div>
+      </section>
+      <section>
         <News />
-      </div>
+      </section>
     </main>
   )
 }
