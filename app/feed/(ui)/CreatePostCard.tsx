@@ -1,6 +1,7 @@
+"use client";
 import React from "react";
 import { Card, Avatar, Input, Button, Flex } from 'antd';
-import { DownloadOutlined, UserOutlined } from '@ant-design/icons';
+import { UserOutlined, CalendarTwoTone, FileImageTwoTone, FileMarkdownTwoTone } from '@ant-design/icons';
 
 const CreatePostCard = () => {
     return (
@@ -17,9 +18,9 @@ const CreatePostCard = () => {
 const ActionButtons = () => {
     return (
         <Flex gap="small" wrap="wrap" className="mt-2" justify="space-around">
-            <Button type="text" size="large" icon={<DownloadOutlined />}>Media</Button>
-            <Button type="text" size="large" icon={<DownloadOutlined />}>Event</Button>
-            <Button type="text" size="large" icon={<DownloadOutlined />}>Write Article</Button>
+            <Button type="text" size="large" icon={<FileImageTwoTone />}>Media</Button>
+            <Button type="text" size="large" icon={<CalendarTwoTone />}>Event</Button>
+            <Button type="text" size="large" icon={<FileMarkdownTwoTone />}>Write Article</Button>
         </Flex>
     )
 }
