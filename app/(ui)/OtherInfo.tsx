@@ -4,7 +4,7 @@ import Link from "next/link";
 const OtherInfo = () => {
     return (
         <Affix offsetTop={20}>
-            <Flex vertical gap={8}>
+            <Flex vertical gap={8} align="center">
                 <Flex gap={8}>
                     <Link href="/about">About</Link>
                     <Link href="/accessibility">Accessibility</Link>

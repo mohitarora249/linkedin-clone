@@ -1,9 +1,10 @@
 import React from "react";
 import AccountInfo from "./(ui)/AccountInfo";
 import CreatePostCard from "./(ui)/CreatePostCard";
-import News from "./(ui)/News";
 import PostInfo from "./(ui)/PostInfo";
 import { Flex } from "antd";
+import OtherInfo from "../(ui)/OtherInfo";
+import News from "./(ui)/News";
 
 const FeedPage = () => {
   return (
@@ -22,7 +23,10 @@ const FeedPage = () => {
         </Flex>
       </section>
       <section>
-        <News />
+        <Flex vertical gap={8}>
+          <News />
+          <OtherInfo />
+        </Flex>
       </section>
     </main>
   )

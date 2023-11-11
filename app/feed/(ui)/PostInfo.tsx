@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { Card, Button, Flex, Avatar, Typography, notification } from 'antd';
+import { Card, Button, Flex, Avatar, Typography, notification, Popconfirm } from 'antd';
 import { CommentOutlined, LikeOutlined, ShareAltOutlined, UserOutlined, CloseOutlined, EllipsisOutlined } from "@ant-design/icons";
 const { Text } = Typography;
 
@@ -16,10 +16,31 @@ const PostInfo = () => {
                     src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
                 />
             }
-            extra={<><Button shape="circle" type="text" icon={<EllipsisOutlined />} /><Button shape="circle" type="text" icon={<CloseOutlined />} /></>}
+            extra={<ExtraActions />}
         >
 
         </Card>
+    )
+}
+
+const ExtraActions = () => {
+    return (
+        <>
+            <Button shape="circle" type="text" icon={<EllipsisOutlined />} />
+            <Popconfirm
+                title="Remove post?"
+                description="Are you sure to remove this post?"
+                // onConfirm={confirm}
+                // onCancel={cancel}
+                okText="Yes"
+                okButtonProps={{
+                    type: "default"
+                }}
+                cancelText="No"
+            >
+                <Button shape="circle" type="text" icon={<CloseOutlined />} />
+            </Popconfirm>
+        </>
     )
 }
 
@@ -41,11 +62,11 @@ const ActionButtons = () => {
 
     const openNotificationWithIcon = () => {
         api.success({
-          message: 'Copied!',
-          description: 'Post link copied to your clipbaord',
-          placement: "bottomRight"
+            message: 'Copied!',
+            description: 'Post link copied to your clipbaord',
+            placement: "bottomRight"
         });
-      };
+    };
 
     return (
         <Flex gap="small" wrap="wrap" className="mt-2" justify="space-around">
