@@ -9,7 +9,7 @@ const PostInfo = () => {
         <Card
             className=""
             title={<UserInfo />}
-            actions={[<ActionButtons />]}
+            actions={[<ActionButtons key="action-buttons" />]}
             cover={
                 <img
                     alt="example"
