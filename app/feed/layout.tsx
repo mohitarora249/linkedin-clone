@@ -16,7 +16,6 @@ export default function RootLayout({
 }) {
   return (
     <Layout className="max-w-6xl mx-auto">
-      <Navbar />
       <Content className="m-5">{children}</Content>
     </Layout>
     
